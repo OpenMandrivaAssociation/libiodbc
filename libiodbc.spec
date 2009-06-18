@@ -174,7 +174,7 @@ currently maintained by OpenLink Software under a LGPL or BSD license
 
 %package -n %{libdev}
 Summary: header files and libraries for iODBC development
-Group: Development/Libraries
+Group: Development/Databases
 Requires: %{libname}
 Requires: %{libnameinst}
 Requires: %{name}-util
