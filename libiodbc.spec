@@ -2,7 +2,7 @@
 
 Name: libiodbc
 Version: 3.52.6
-Release: %mkrel 2
+Release: %mkrel 3
 Summary: The iODBC Driver Manager
 Group: System/Libraries
 License: BSD
