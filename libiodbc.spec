@@ -2,7 +2,7 @@
 
 Name: libiodbc
 Version: 3.52.6
-Release: %mkrel 1
+Release: %mkrel 2
 Summary: The iODBC Driver Manager
 Group: System/Libraries
 License: BSD
@@ -237,6 +237,7 @@ currently maintained by OpenLink Software under a LGPL or BSD license
 	--disable-gui \
 	%endif
 	--with-iodbc-inidir=%_sysconfdir \
+	--includedir=%_includedir/iodbc \
 	--enable-pthreads
 
 %make
