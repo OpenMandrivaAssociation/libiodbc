@@ -2,14 +2,13 @@
 
 Name: libiodbc
 Version: 3.52.6
-Release: %mkrel 3
+Release: %mkrel 4
 Summary: The iODBC Driver Manager
 Group: System/Libraries
 License: BSD
 URL: http://www.iodbc.org/
 Source: http://www.iodbc.org/downloads/iODBC/libiodbc-%{version}.tar.gz
 BuildRoot: %{_tmppath}/%{name}-%{version}-root
-BuildRequires: unixODBC-devel
 %if %with gtk
 BuildRequires: gtk+2-devel
 %endif
