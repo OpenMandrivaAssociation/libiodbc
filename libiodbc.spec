@@ -2,7 +2,7 @@
 
 Name: libiodbc
 Version: 3.52.7
-Release: %mkrel 2
+Release: %mkrel 3
 Summary: The iODBC Driver Manager
 Group: System/Libraries
 License: BSD
@@ -218,7 +218,7 @@ currently maintained by OpenLink Software under a LGPL or BSD license
 %{_libdir}/pkgconfig/libiodbc.pc
 %{_mandir}/man1/iodbc-config.1*
 %{_datadir}/libiodbc
-%multiarch %_bindir/%multiarch_platform/iodbc-config
+%multiarch_bindir/iodbc-config
 
 #---------------------------------------------------------------
 
