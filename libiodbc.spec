@@ -1,13 +1,13 @@
 %bcond_with gtk 0
 
 Name: libiodbc
-Version: 3.52.7
-Release: %mkrel 4
+Version: 3.52.8
+Release: 1
 Summary: The iODBC Driver Manager
 Group: System/Libraries
 License: BSD
 URL: http://www.iodbc.org/
-Source: http://www.iodbc.org/downloads/iODBC/libiodbc-%{version}.tar.gz
+Source: https://nodeload.github.com/openlink/iODBC/tarball/v3.52.8/openlink-iODBC-v%version-0-g92de4c0.tar.gz
 BuildRoot: %{_tmppath}/%{name}-%{version}-root
 %if %with gtk
 BuildRequires: gtk+2-devel
@@ -213,7 +213,6 @@ currently maintained by OpenLink Software under a LGPL or BSD license
 %doc etc/odbcinst.ini.sample
 %{_includedir}/*
 %{_libdir}/*.so
-%{_libdir}/*.la
 %{_bindir}/iodbc-config
 %{_libdir}/pkgconfig/libiodbc.pc
 %{_mandir}/man1/iodbc-config.1*
@@ -223,7 +222,8 @@ currently maintained by OpenLink Software under a LGPL or BSD license
 #---------------------------------------------------------------
 
 %prep
-%setup -q
+%setup -q -n openlink-iODBC-c9e80e1
+[ -e configure ] || ./bootstrap.sh
 
 %build
 %configure2_5x \
