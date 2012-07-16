@@ -2,13 +2,12 @@
 
 Name: libiodbc
 Version: 3.52.8
-Release: 1
+Release: 2
 Summary: The iODBC Driver Manager
 Group: System/Libraries
 License: BSD
 URL: http://www.iodbc.org/
-Source: https://nodeload.github.com/openlink/iODBC/tarball/v3.52.8/openlink-iODBC-v%version-0-g92de4c0.tar.gz
-BuildRoot: %{_tmppath}/%{name}-%{version}-root
+Source0: https://nodeload.github.com/openlink/iODBC/tarball/v3.52.8/openlink-iODBC-v%version-0-g92de4c0.tar.gz
 %if %with gtk
 BuildRequires: gtk+2-devel
 %endif
@@ -43,7 +42,6 @@ currently maintained by OpenLink Software under a LGPL or BSD license
 (see "LICENSE" file included in the distribution).
 
 %files -n %{libname}
-%defattr(-,root,root)
 %{_libdir}/libiodbc.so.%{soname}*
 
 #---------------------------------------------------------------
@@ -66,7 +64,6 @@ currently maintained by OpenLink Software under a LGPL or BSD license
 (see "LICENSE" file included in the distribution).
 
 %files -n %{libnameinst}
-%defattr(-,root,root)
 %{_libdir}/libiodbcinst.so.%{instsoname}*
 
 #---------------------------------------------------------------
@@ -86,7 +83,6 @@ currently maintained by OpenLink Software under a LGPL or BSD license
 (see "LICENSE" file included in the distribution).
 
 %files util
-%defattr(-,root,root)
 %{_bindir}/iodbctest
 %{_bindir}/iodbctestw
 %{_mandir}/man1/iodbctest.1*
@@ -114,7 +110,6 @@ currently maintained by OpenLink Software under a LGPL or BSD license
 (see "LICENSE" file included in the distribution).
 
 %files -n %{libnamedrvproxy}
-%defattr(-,root,root,-)
 %{_libdir}/libiodbcdrvproxy.so.%{drvproxysoname}*
 
 #---------------------------------------------------------------
@@ -137,7 +132,6 @@ currently maintained by OpenLink Software under a LGPL or BSD license
 (see "LICENSE" file included in the distribution).
 
 %files -n %{libnameadm}
-%defattr(-,root,root,-)
 %{_libdir}/libiodbcadm.so.%{admsoname}*
 
 #---------------------------------------------------------------
@@ -160,7 +154,6 @@ currently maintained by OpenLink Software under a LGPL or BSD license
 (see "LICENSE" file included in the distribution).
 
 %files admin
-%defattr(-,root,root,-)
 %{_bindir}/iodbcadm-gtk
 %{_mandir}/man1/iodbcadm-gtk.1*
 
@@ -199,7 +192,6 @@ currently maintained by OpenLink Software under a LGPL or BSD license
 (see "LICENSE" file included in the distribution).
 
 %files -n %{libdev} 
-%defattr(-, root, root, -) 
 %doc AUTHORS 
 %doc AUTHORS 
 %doc LICENSE
@@ -249,7 +241,4 @@ rm -rf %buildroot
 # Multiarch fixes
 %multiarch_binaries %buildroot/%_bindir/iodbc-config
 
-
-%clean
-rm -rf %buildroot
 
