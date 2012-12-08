@@ -7,7 +7,7 @@ Summary: The iODBC Driver Manager
 Group: System/Libraries
 License: BSD
 URL: http://www.iodbc.org/
-Source0: https://nodeload.github.com/openlink/iODBC/tarball/v3.52.8/openlink-iODBC-v%version-0-g92de4c0.tar.gz
+Source: http://www.iodbc.org/downloads/iODBC/libiodbc-%{version}.tar.gz
 %if %with gtk
 BuildRequires: gtk+2-devel
 %endif
@@ -214,8 +214,7 @@ currently maintained by OpenLink Software under a LGPL or BSD license
 #---------------------------------------------------------------
 
 %prep
-%setup -q -n openlink-iODBC-c9e80e1
-[ -e configure ] || ./bootstrap.sh
+%setup -q
 
 %build
 %configure2_5x \
@@ -240,5 +239,45 @@ rm -rf %buildroot
 
 # Multiarch fixes
 %multiarch_binaries %buildroot/%_bindir/iodbc-config
+
+
+%clean
+rm -rf %buildroot
+
+
+
+%changelog
+* Mon May 02 2011 Oden Eriksson <oeriksson@mandriva.com> 3.52.7-4mdv2011.0
++ Revision: 661959
+- rebuild
+
+* Mon May 02 2011 Oden Eriksson <oeriksson@mandriva.com> 3.52.7-3
++ Revision: 661448
+- multiarch fixes
+
+* Sun Nov 28 2010 Oden Eriksson <oeriksson@mandriva.com> 3.52.7-2mdv2011.0
++ Revision: 602562
+- rebuild
+
+* Fri Jan 15 2010 Emmanuel Andry <eandry@mandriva.org> 3.52.7-1mdv2010.1
++ Revision: 491779
+- New version 3.52.7
+
+* Fri Jul 17 2009 Helio Chissini de Castro <helio@mandriva.com> 3.52.6-4mdv2010.0
++ Revision: 396896
+- We do not need unixODBC to compile
+
+* Fri Jun 19 2009 Helio Chissini de Castro <helio@mandriva.com> 3.52.6-3mdv2010.0
++ Revision: 387368
+- Rebuild to regenerate hdlists for missing packages
+
+* Fri Jun 19 2009 Helio Chissini de Castro <helio@mandriva.com> 3.52.6-2mdv2010.0
++ Revision: 387361
+- Header installed in includedir/iodbc and not conflicting anymore with unixODBC
+
+* Thu Jun 18 2009 Helio Chissini de Castro <helio@mandriva.com> 3.52.6-1mdv2010.0
++ Revision: 387145
+- Add iODBC package required by virtuoso. This will enable fix virtuoso use of internl unixODBC and iODBC
+- imported package libiodbc
 
 
