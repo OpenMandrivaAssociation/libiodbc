@@ -1,6 +1,6 @@
 %bcond_with gtk 0
 
-%define major	2
+%define major 2
 %define libname %mklibname iodbc %{major}
 %define libadm %mklibname iodbcadm %{major}
 %define libinst %mklibname iodbcinst %{major}
@@ -9,8 +9,8 @@
 
 Summary:	The iODBC Driver Manager
 Name:		libiodbc
-Version:	3.52.8
-Release:	8
+Version:	3.52.9
+Release:	1
 Group:		System/Libraries
 License:	BSD
 Url:		http://www.iodbc.org/
@@ -44,14 +44,14 @@ Summary:	The iODBC Driver Manager main library
 Group:		System/Libraries
 
 %description -n %{libname}
-This package contains a shared library for %{name}. 
+This package contains a shared library for %{name}.
 
 %package -n %{libinst}
 Summary:	The iODBC Driver Manager main library
 Group:		System/Libraries
 
 %description -n %{libinst}
-This package contains a shared library for %{name}. 
+This package contains a shared library for %{name}.
 
 %if %with gtk
 %package -n %{libdrvproxy}
@@ -59,14 +59,14 @@ Summary:	The iODBC Driver Manager main library
 Group:		System/Libraries
 
 %description -n %{libdrvproxy}
-This package contains a shared library for %{name}. 
+This package contains a shared library for %{name}.
 
 %package -n %{libadm}
 Summary:	The iODBC Driver Manager main library
 Group:		System/Libraries
 
 %description -n %{libadm}
-This package contains a shared library for %{name}. 
+This package contains a shared library for %{name}.
 
 %package admin
 Summary:	GTK based administrator for iODBC development
@@ -80,14 +80,14 @@ DSN information in odbc.ini and odbcinst.ini files.
 %package -n %{devname}
 Summary:	header files and libraries for iODBC development
 Group:		Development/Databases
-Provides:	iodbc-devel
-Provides:	%{name}-devel
-Requires:	%{libname}
+Provides:	iodbc-devel = %{EVRD}
+Provides:	%{name}-devel = %{EVRD}
+Requires:	%{libname} = %{EVRD}
 Requires:	%{libinst}
-Requires:	%{name}-util
+Requires:	%{name}-util = %{EVRD}
 %if %with gtk
-Requires:	%{libdrvproxy}
-Requires:	%{libadm}
+Requires:	%{libdrvproxy} = %{EVRD}
+Requires:	%{libadm} = %{EVRD}
 %endif
 
 %description -n %{devname}
@@ -98,7 +98,7 @@ program that use the driver manager.
 %setup -q
 
 %build
-%configure2_5x \
+%configure \
 	--enable-odbc3 \
 	--disable-libodbc \
 	--disable-static \

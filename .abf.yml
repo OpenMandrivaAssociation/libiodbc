@@ -1,2 +1,4 @@
+removed_sources:
+  libiodbc-3.52.8.tar.gz: 93a3f061afff3152c5fcee1e5af8b802760a7e74
 sources:
-  "libiodbc-3.52.8.tar.gz": 93a3f061afff3152c5fcee1e5af8b802760a7e74
+  libiodbc-3.52.9.tar.gz: 82be6d6ff22926f087020dd310e1e9f64b2a283e
