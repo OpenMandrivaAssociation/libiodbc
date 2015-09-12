@@ -10,7 +10,7 @@
 Summary:	The iODBC Driver Manager
 Name:		libiodbc
 Version:	3.52.9
-Release:	3
+Release:	4
 Group:		System/Libraries
 License:	BSD
 Url:		http://www.iodbc.org/
