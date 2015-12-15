@@ -7,6 +7,8 @@
 %define libdrvproxy %mklibname iodbcdrvproxy %{major}
 %define devname %mklibname iodbc -d
 
+%define _disable_lto 1
+
 Summary:	The iODBC Driver Manager
 Name:		libiodbc
 Version:	3.52.9
