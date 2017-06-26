@@ -1,4 +1,4 @@
-%bcond_with gtk 0
+%bcond_with gtk
 
 %define major 2
 %define libname %mklibname iodbc %{major}
@@ -11,12 +11,12 @@
 
 Summary:	The iODBC Driver Manager
 Name:		libiodbc
-Version:	3.52.9
-Release:	4
+Version:	3.52.12
+Release:	1
 Group:		System/Libraries
 License:	BSD
 Url:		http://www.iodbc.org/
-Source0:	http://www.iodbc.org/downloads/iODBC/%{name}-%{version}.tar.gz
+Source0:	https://downloads.sourceforge.net/project/iodbc/iodbc/%{version}/libiodbc-%{version}.tar.gz
 %if %with gtk
 BuildRequires:	pkgconfig(gtk+-2.0)
 %endif
@@ -118,9 +118,6 @@ program that use the driver manager.
 %install
 %makeinstall_std
 
-# Multiarch fixes
-%multiarch_binaries %{buildroot}/%{_bindir}/iodbc-config
-
 %files util
 %{_bindir}/iodbctest
 %{_bindir}/iodbctestw
@@ -154,5 +151,3 @@ program that use the driver manager.
 %{_libdir}/pkgconfig/libiodbc.pc
 %{_datadir}/libiodbc
 %{_mandir}/man1/iodbc-config.1*
-%{multiarch_bindir}/iodbc-config
-
