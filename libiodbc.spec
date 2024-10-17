@@ -15,7 +15,7 @@ Version:	3.52.16
 Release:	1
 Group:		System/Libraries
 License:	BSD
-Url:		http://www.iodbc.org/
+Url:		https://www.iodbc.org/
 Source0:	https://downloads.sourceforge.net/project/iodbc/iodbc/%{version}/libiodbc-%{version}.tar.gz
 %if %with gtk
 BuildRequires:	pkgconfig(gtk+-2.0)
