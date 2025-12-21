@@ -18,6 +18,11 @@ License:	BSD
 Url:		https://www.iodbc.org/
 Source0:	https://downloads.sourceforge.net/project/iodbc/iodbc/%{version}/libiodbc-%{version}.tar.gz
 %if %with gtk
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	libtool-base
+BuildRequires:	slibtool
+BuildRequires:	make
 BuildRequires:	pkgconfig(gtk+-2.0)
 %endif
 
